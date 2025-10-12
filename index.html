@@ -4,163 +4,241 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rathish Manivannan — Research Portfolio</title>
-  <meta name="description" content="Rathish Manivannan — B.Tech CSE (IoT), Shiv Nadar University Chennai. Research portfolio for PhD applications abroad." />
+  <meta name="description" content="Research portfolio of Rathish Manivannan — B.Tech CSE (IoT), Shiv Nadar University Chennai & B.S Data Science, IIT Madras. Interests: ML, IoT, Data Science, Cybersecurity." />
   <style>
+    /* ---------- Palette & Typographic scale ---------- */
     :root{
-      --bg:#f7f8fb; --card:#ffffff; --accent:#155fa0; --muted:#6b7280;
-      --maxw:900px; --radius:12px; --gap:20px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --accent:#163b7a;
+      --accent-2:#2a6fb8;
+      --muted:#56606f;
+      --glass: rgba(255,255,255,0.7);
+      --radius:14px;
+      --maxw:1000px;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
     }
-    html,body{height:100%; margin:0; background:var(--bg); color:#0f1724;}
-    .wrap{max-width:var(--maxw); margin:32px auto; padding:28px; gap:24px; display:flex; flex-direction:column;}
-    header{display:flex; gap:20px; align-items:center;}
-    .avatar{
-      width:96px; height:96px; border-radius:12px; background:linear-gradient(135deg,#e6f0fb,#ffffff);
-      display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--accent); font-size:22px;
-      box-shadow:0 6px 20px rgba(12,31,64,0.06);
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#f6f8fb, #eef3fb);color:#0b1720;}
+    .container{max-width:var(--maxw);margin:36px auto;padding:28px;display:flex;flex-direction:column;gap:20px;}
+    /* ---------- Header ---------- */
+    .header{
+      display:flex;gap:22px;align-items:center;background:var(--card);padding:22px;border-radius:var(--radius);
+      box-shadow: 0 12px 30px rgba(19,37,70,0.06);
+      justify-content:space-between;flex-wrap:wrap;
     }
-    h1{margin:0; font-size:28px;}
-    .subtitle{color:var(--muted); margin-top:6px;}
-    .contact{margin-left:auto; display:flex; gap:10px; flex-direction:column; text-align:right;}
-    .link{color:var(--accent); text-decoration:none; font-weight:600;}
-    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:0 8px 30px rgba(12,31,64,0.04);}
-    .grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--gap);}
-    @media(max-width:800px){ .grid{grid-template-columns:1fr} .contact{text-align:left; margin-left:0;} }
-    section h2{margin:0 0 12px 0; font-size:18px; color:#0b2540;}
-    p.lead{margin:0; color:var(--muted); line-height:1.5;}
-    ul.simple{margin:8px 0 0 16px; color:var(--muted);}
-    .projects{display:flex; flex-direction:column; gap:12px;}
-    .proj{padding:12px; border-radius:10px; border:1px solid #eef3fb;}
-    .proj h3{margin:0; font-size:16px;}
-    .meta{color:var(--muted); font-size:13px; margin-top:6px;}
-    .btn{display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid rgba(21,95,160,0.12);}
-    footer{margin-top:8px; color:var(--muted); font-size:13px; text-align:center;}
-    .chips{display:flex; gap:8px; flex-wrap:wrap;}
-    .chip{background:#f1f6fb; padding:6px 10px; border-radius:999px; color:#0b2540; font-weight:600; font-size:13px;}
-    .pub{margin-bottom:8px;}
+    .profile{
+      display:flex;gap:18px;align-items:center;
+    }
+    .photo{
+      width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-2);
+      box-shadow:0 8px 24px rgba(27,59,122,0.08);
+    }
+    .title{display:flex;flex-direction:column;gap:6px;}
+    h1{margin:0;font-size:26px;color:var(--accent);}
+    .sub{color:var(--muted);font-size:14px;}
+    .links{display:flex;flex-direction:column;gap:6px;text-align:right;font-size:14px;}
+    .links a{color:var(--accent);text-decoration:none;font-weight:600;}
+    @media(max-width:880px){ .links{text-align:left;margin-top:10px;} .header{align-items:flex-start;} }
+
+    /* ---------- Cards / Sections ---------- */
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 10px 28px rgba(16,28,55,0.04);}
+    h2{margin:0 0 12px 0;color:var(--accent);font-size:18px;border-left:3px solid var(--accent);padding-left:10px;}
+    p.lead{margin:0;color:var(--muted);line-height:1.6;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    @media(max-width:880px){ .grid-2{grid-template-columns:1fr;} }
+
+    /* ---------- Chips / Skills ---------- */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+    .chip{background:linear-gradient(180deg,#f2f6ff,#ffffff);padding:6px 10px;border-radius:999px;font-weight:600;color:#123257;border:1px solid rgba(18,50,87,0.06);font-size:13px;}
+
+    /* ---------- Projects ---------- */
+    .proj{border-radius:10px;padding:14px;border:1px solid #e9eff9;background:linear-gradient(180deg,#fbfdff,#ffffff);margin-bottom:12px;}
+    .proj h3{margin:0 0 6px 0;color:#0f2946;}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px;}
+
+    .btn{display:inline-block;padding:8px 12px;border-radius:9px;background:var(--accent);color:white;text-decoration:none;font-weight:700;margin-top:8px;box-shadow:0 6px 18px rgba(26,78,150,0.12);}
+    .btn-outline{display:inline-block;padding:7px 12px;border-radius:9px;border:1px solid rgba(22,59,122,0.12);color:var(--accent);text-decoration:none;font-weight:700;background:transparent;}
+    .small{font-size:13px;color:var(--muted);}
+
+    /* ---------- lists ---------- */
+    ul.clean{padding-left:18px;margin:6px 0;color:var(--muted);line-height:1.6;}
+    li{margin-bottom:6px;}
+
+    footer{text-align:center;color:var(--muted);font-size:13px;margin-top:8px;padding-bottom:24px;}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="avatar">RM</div>
-      <div>
-        <h1>Rathish Manivannan</h1>
-        <div class="subtitle">B.Tech CSE (IoT) — Shiv Nadar University Chennai</div>
-        <div style="margin-top:6px;color:var(--muted);font-size:14px">
-          Research Interests: Machine Learning • IoT • Data Science • Cybersecurity
+  <main class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="profile">
+        <img src="Rathish Manivannan Photo.jpg" alt="Rathish Manivannan" class="photo">
+        <div class="title">
+          <h1>Rathish Manivannan</h1>
+          <div class="sub">
+            Aspiring Researcher — Machine Learning • IoT • Data Science • Cybersecurity<br>
+            B.Tech CSE (IoT) — Shiv Nadar University Chennai • B.S Data Science & Applications — IIT Madras
+          </div>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">Isolation Forest • Anomaly Detection</span>
+            <span class="chip">Embedded Systems (ESP32 / Arduino)</span>
+            <span class="chip">YOLO / Computer Vision</span>
+          </div>
         </div>
       </div>
-      <div class="contact">
-        <div><strong>Phone:</strong> +91-8778330413</div>
-        <div><strong>Email:</strong> <a class="link" href="mailto:rathish.manivannan@gmail.com">rathish.manivannan@gmail.com</a></div>
-        <div>
-          <a class="link" href="https://github.com/RATHISHMANIVANNAN" target="_blank">GitHub</a> ·
-          <a class="link" href="https://www.linkedin.com/in/rathish-manivannan-795a47258" target="_blank">LinkedIn</a>
+
+      <div class="links">
+        <div><strong>Email:</strong> <a href="mailto:rathish.manivannan@gmail.com">rathish.manivannan@gmail.com</a></div>
+        <div><strong>Phone:</strong> +91-87783-30413</div>
+        <div style="margin-top:6px">
+          <a href="https://github.com/RATHISHMANIVANNAN" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/rathish-manivannan-795a47258" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </header>
 
+    <!-- ABOUT & RESEARCH -->
     <section class="card">
-      <h2>About / Research Interests</h2>
+      <h2>About</h2>
       <p class="lead">
-        I’m Rathish Manivannan, pursuing a B.Tech in Computer Science and Engineering with a specialization in IoT (2022–2026) at Shiv Nadar University Chennai, India.
-        I also hold a Diploma in Data Science (2024) from IIT Madras.
-        My research focuses on Machine Learning, Internet of Things (IoT), Data Science, and Cybersecurity — applying these technologies to solve real-world challenges through research, innovation, and interdisciplinary collaboration.
+        I am currently pursuing a B.Tech in Computer Science and Engineering (specialization: Internet of Things) at Shiv Nadar University Chennai (2022–2026), and enrolled in the B.S Data Science and Applications program at IIT Madras (2022–2026) — having completed the Diploma in Data Science in 2024.
+        My research blends Machine Learning, IoT, and Cybersecurity to design robust, resource-aware learning systems for distributed and embedded environments.
       </p>
-      <div style="margin-top:12px" class="chips">
-        <div class="chip">Machine Learning</div>
-        <div class="chip">IoT Systems</div>
-        <div class="chip">Data Science</div>
-        <div class="chip">Cybersecurity</div>
-        <div class="chip">Research & Teaching</div>
-      </div>
+    </section>
+    
+    <section class="card">
+      <h2>Research Statement</h2>
+      <p class="lead">
+        My primary research objective is to develop <strong>adaptive and secure machine learning methods</strong> for distributed embedded systems. I am specifically interested in <strong>anomaly detection and defense mechanisms for IoT networks</strong>, <strong>federated and privacy-preserving learning</strong> for resource-constrained devices, and <strong>resilient ML pipelines for cyber-physical systems</strong>. 
+  My work integrates empirical prototyping using ESP32 and Arduino platforms, statistical anomaly detection techniques (Isolation Forest, time-series analysis), and performance evaluations to bridge theory with deployable solutions. 
+  I am also deeply engaged in <strong>interdisciplinary research</strong> that combines <strong>Artificial Intelligence, Computer Vision, Image Processing, and the Internet of Things</strong> to design intelligent, efficient, and secure real-world systems.
     </section>
 
-    <div class="grid">
+    <!-- EDUCATION + COURSES grouped academically -->
+    <div class="grid-2">
       <section class="card">
         <h2>Education</h2>
-        <div><strong>B.Tech, Computer Science & Engineering (IoT)</strong><br>Shiv Nadar University, Chennai — 2022–2026<br>CGPA: 9.64 (current)</div>
-        <div style="margin-top:8px;"><strong>Diploma in Data Science</strong><br>IIT Madras — 2024</div>
+        <ul class="clean">
+          <li><strong>B.Tech — Computer Science & Engineering (IoT)</strong>, Shiv Nadar University, Chennai (2022–2026)<br><span class="small">Current CGPA: 9.64</span></li>
+
+          <li style="margin-top:8px"><strong>B.S — Data Science & Applications</strong>, Indian Institute of Technology Madras (2022–2026)<br>
+            <span class="small">Completed Diploma in Data Science (2024) • Current CGPA: 8.13</span>
+          </li>
+
+          <li style="margin-top:8px"><strong>Senior Secondary</strong> — CBSE (2022) • 97.0%</li>
+          <li><strong>Secondary</strong> — CBSE (2020) • 97.4%</li>
+        </ul>
       </section>
 
       <section class="card">
-        <h2>Awards & Achievements</h2>
-        <ul class="simple">
-          <li>Best Paper Award — Springer ICCCSP (2024)</li>
-          <li>Presented at IEEE ICoAC, MIT (Anna University) — 2023</li>
-          <li>Academic Excellence & Merit Scholarships (2023–2025)</li>
-          <li>Poster Presentations: IIT Madras (AIRSS 2024), IoT Expo 1st Rank</li>
-          <li>2nd Place — IEEE CS Madras Mega ICT Quiz (2025)</li>
+        <h2>Relevant Courses & Certifications</h2>
+        <ul class="clean">
+          <!-- pick most PhD-relevant items from CV -->
+          <li><strong>Mathematics & Foundations:</strong> Linear Algebra, Probability & Random Processes, Discrete Mathematics, Graph Theory.</li>
+          <li><strong>Core Computer Science:</strong> Computer Networks & Internet Protocol, Operating Systems, Computer Organization & Architecture, Digital Design & Microprocessors.</li>
+          <li><strong>Machine Learning & Data Science:</strong> Modern Application Development, Data Analysis with Python, Affective Computing (NPTEL), Responsible & Safe AI Systems (NPTEL).</li>
+          <li><strong>Cloud & Systems:</strong> Cloud Computing (NPTEL / IIT content), MySQL & System Commands.</li>
+          <li><strong>Professional / Legal:</strong> NPTEL — Patent Drafting for Beginners; Patent Law for Engineers & Scientists.</li>
+          <li class="small" style="margin-top:6px">(Full coursework and certificates available on request)</li>
         </ul>
       </section>
     </div>
 
+    <!-- SKILLS -->
     <section class="card">
-      <h2>Selected Projects</h2>
-      <div class="projects">
-        <div class="proj">
-          <h3>Sports Video Data Classification (YOLOv5)</h3>
-          <div class="meta">Mar–May 2023 • Python, YOLOv5</div>
-          <p>Built a YOLOv5 pipeline to classify sports videos, extract pose landmarks, and generate analytics graphs for classification tasks.</p>
-          <a class="btn" href="https://github.com/RATHISHMANIVANNAN/Sports-Video-Classification" target="_blank">GitHub</a>
-        </div>
-
-        <div class="proj">
-          <h3>Touchless Doorbell with Face Detection</h3>
-          <div class="meta">Jul–Oct 2023 • Arduino, OpenCV</div>
-          <p>Designed a touchless IoT doorbell using Arduino UNO, ultrasonic sensors, and OpenCV-based face detection with real-time alerts.</p>
-          <a class="btn" href="https://github.com/RATHISHMANIVANNAN/Touchless-Doorbell-with-Face-Detection" target="_blank">GitHub</a>
-        </div>
-
-        <div class="proj">
-          <h3>Advanced DDoS Detection & Analysis (ML + IoT)</h3>
-          <div class="meta">Sep–Nov 2024 • ESP32, Isolation Forest</div>
-          <p>Implemented an ESP32-based web server simulating traffic (normal / low-rate / high-rate DDoS) and applied Isolation Forest for detection.</p>
-          <a class="btn" href="https://github.com/RATHISHMANIVANNAN/DDOS-Attack-Detection-and-Analysis-System" target="_blank">GitHub</a>
-        </div>
+      <h2>Technical Skills</h2>
+      <div class="chips" style="margin-top:8px">
+        <span class="chip">Python</span>
+        <span class="chip">C</span>
+        <span class="chip">Machine Learning</span>
+        <span class="chip">OpenCV</span>
+        <span class="chip">scikit-learn</span>
+        <span class="chip">Embedded (Arduino / ESP32)</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">LaTeX • Git • Jupyter</span>
       </div>
     </section>
 
+    <!-- ACHIEVEMENTS -->
     <section class="card">
-      <h2>Publications & Research</h2>
-      <div class="pub">
-        <strong>Best Paper Award — ICCCSP 2024 (Springer)</strong><br>
-        Published in Springer volume on Computer Communication, Cybersecurity & Signal Processing.<br>
-        <a class="link" href="https://link.springer.com/chapter/10.1007/978-3-031-73617-9_35" target="_blank">View Springer Chapter</a>
-      </div>
-
-      <div class="pub">
-        <strong>IEEE ICoAC 2023</strong><br>
-        Presented research paper at MIT (Anna University), Chennai.<br>
-        <a class="link" href="https://ieeexplore.ieee.org/document/10249850" target="_blank">View IEEE Paper</a>
-      </div>
-
-      <hr style="margin:16px 0; border:0; border-top:1px solid #e5eaf2;">
-      <p style="color:#6b7280; font-size:14px;">Complete publication list available at:</p>
-      <ul style="list-style:none; padding:0;">
-        <li>🧬 <strong>ORCID:</strong> <a class="link" href="https://orcid.org/0009-0003-5657-5233" target="_blank">https://orcid.org/0009-0003-5657-5233</a></li>
-        <li style="margin-top:6px;">📘 <strong>Google Scholar:</strong> <a class="link" href="https://scholar.google.com/citations?user=DbWwHMwAAAAJ&hl=en" target="_blank">https://scholar.google.com/citations?user=DbWwHMwAAAAJ&hl=en</a></li>
+      <h2>Achievements & Recognition</h2>
+      <ul class="clean">
+        <li><strong>Best Paper Award</strong> — ICCCSP (Springer), 2024 (SSN College of Engineering).</li>
+        <li><strong>Best Paper Presentation</strong> — RSC’25 (Research Scholars’ Colloquium) — SSNCE, Chennai, 2025.</li>
+        <li><strong>Paper Presentation</strong> — IEEE ICoAC 2023 (MIT, Anna University), Chennai.</li>
+        <li><strong>Paper Presentation</strong> — CVR 2025 (Springer), National Institute of Technology Goa.</li>
+        <li><strong>Poster Presentation</strong> — "Intelligent IoT — A Machine Learning Perspective" at AIRSS 2024, IIT Madras.</li>
+        <li><strong>1st Rank</strong> — IoT Poster Expo 2024, Centre for Internet of Things , MITS, Gwalior, Madhya Pradesh.</li>
+        <li><strong>2nd Place</strong> — IEEE CS Madras Mega ICT Quiz (Zonal Orals Round, 2025).</li>
+        <li><strong>Merit Scholarship</strong> — Shiv Nadar University Chennai (2023, 2024).</li>
+        <li><strong>Academic Excellence Award</strong> — Shiv Nadar University Chennai (2024, 2025).</li>
+        <li><strong>IEEE Student Member</strong> — IEEE Madras Section (2024–Present).</li>
+        <li><strong>Elite Gold Top 5% (Score: 92%)</strong> — NPTEL Course “Affective Computing”, Jan–Apr 2025, IIIT Delhi.</li>     
       </ul>
     </section>
 
+    <!-- PROJECTS -->
     <section class="card">
-      <h2>Teaching & Leadership</h2>
-      <ul class="simple">
-        <li>Teaching Assistant — C Programming Lab, IIT Madras (Dec 2023)</li>
-        <li>Intern — Process Associate Trainee, IASET Journals (May–Jun 2024)</li>
-        <li>Senior Core Member — Potential Robotics Club, Shiv Nadar University Chennai (2024–Present)</li>
-        <li>Core Team (R&D) — Ramanujan Society of Research, IIT Madras (2025–Present)</li>
+      <h2>Research Projects</h2>
+
+      <div class="proj">
+        <h3>Advanced Detection & Analysis of DDoS Attacks (ML + IoT)</h3>
+        <div class="meta">Sep 2024 – Nov 2024 • ESP32 • Isolation Forest • Python</div>
+        <p class="small">Implemented an ESP32-hosted web server to simulate normal, low-rate and high-rate DDoS traffic. Applied Isolation Forest for anomaly detection and visualized request-rate patterns to evaluate detection robustness on embedded servers.</p>
+        <a class="btn" href="https://github.com/RATHISHMANIVANNAN/DDOS-Attack-Detection-and-Analysis-System" target="_blank" rel="noopener">View Repository</a>
+      </div>
+
+      <div class="proj">
+        <h3>Sports Video Data Classification (YOLOv5)</h3>
+        <div class="meta">Mar 2023 – May 2023 • YOLOv5 • Pose Estimation • Python</div>
+        <p class="small">Built and deployed a YOLOv5 pipeline to detect and classify sports activities, extract pose landmarks, and generate analytics to support downstream classification tasks.</p>
+        <a class="btn" href="https://github.com/RATHISHMANIVANNAN/Sports-Video-Classification" target="_blank" rel="noopener">View Repository</a>
+      </div>
+
+      <div class="proj">
+        <h3>Touchless Doorbell with Face Detection</h3>
+        <div class="meta">Jul 2023 – Oct 2023 • Arduino UNO • OpenCV • gTTS</div>
+        <p class="small">Designed an IoT touchless doorbell using ultrasonic sensors and integrated OpenCV-based face detection with voice alerts for safe contactless access systems.</p>
+        <a class="btn" href="https://github.com/RATHISHMANIVANNAN/Touchless-Doorbell-with-Face-Detection" target="_blank" rel="noopener">View Repository</a>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="card">
+      <h2>Publications & Research Output</h2>
+
+      <p class="small"><strong>Best Paper — ICCCSP (Springer), 2024</strong><br>
+      Chapter in Springer volume on Computer Communication, Cybersecurity & Signal Processing. <a class="btn-outline" href="https://link.springer.com/chapter/10.1007/978-3-031-73617-9_35" target="_blank" rel="noopener">Springer Chapter</a></p>
+
+      <p class="small" style="margin-top:10px;"><strong>IEEE ICoAC, 2023</strong><br>
+      Paper presented at ICoAC (MIT Anna University). Published in IEEE Xplore. <a class="btn-outline" href="https://ieeexplore.ieee.org/document/10249850" target="_blank" rel="noopener">IEEE Paper</a></p>
+
+      <p class="small" style="margin-top:12px;">Full publication list and citations: 🧬 <a href="https://orcid.org/0009-0003-5657-5233" target="_blank" rel="noopener">ORCID</a> · 📘 <a href="https://scholar.google.com/citations?user=DbWwHMwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></p>
+    </section>
+
+    <!-- TEACHING & LEADERSHIP -->
+    <section class="card">
+      <h2>Teaching, Leadership & Professional Membership</h2>
+      <ul class="clean">
+        <li>Teaching Assistant — C Programming Lab, IIT Madras (Dec 2023) — lectures, evaluation, student mentoring.</li>
+        <li>Intern — Process Associate (Trainee), IASET Journals, Chennai (May–Jun 2024) — research workflows, publication support.</li>
+        <li>Senior Core Committee Member — Potential Robotics Club, Shiv Nadar University (Jul 2024 – Present) — events, workshops, seminars.</li>
+        <li>Core Team Member (R&D) — Ramanujan Society of Research, IIT Madras (Aug 2025 – Present) — research coordination, talks.</li>
+        <li>IEEE Student Member — IEEE Madras Section (2024–Present).</li>
       </ul>
     </section>
 
-    <section class="card" style="text-align:center;">
-      <h2>Download Full Resume</h2>
-      <a class="btn" href="https://drive.google.com/file/d/1km3ja35aFhUAMerg84OMNausOJZpomrc/view?usp=drivesdk" target="_blank">📄 View / Download Resume (PDF)</a>
+    <!-- RESUME & CONTACT -->
+    <section class="card" style="text-align:center">
+      <h2>Resume & Contact</h2>
+      <p class="small">Download full CV for detailed coursework, marks, and publication metadata.</p>
+      <a class="btn" href="https://drive.google.com/file/d/1km3ja35aFhUAMerg84OMNausOJZpomrc/view?usp=drivesdk" target="_blank" rel="noopener">📄 View / Download Resume (PDF)</a>
+      <div style="margin-top:12px" class="small">Or contact: <a href="mailto:rathish.manivannan@gmail.com">rathish.manivannan@gmail.com</a></div>
     </section>
 
     <footer>
-      © 2025 Rathish Manivannan
+      © 2025 Rathish Manivannan • GitHub: <a href="https://github.com/RATHISHMANIVANNAN" target="_blank" rel="noopener">RATHISHMANIVANNAN</a>
     </footer>
   </main>
 </body>
